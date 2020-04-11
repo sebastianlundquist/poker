@@ -1,8 +1,9 @@
-﻿using System;
+﻿using CardEngine;
+using System;
 using System.Collections.Generic;
 using static System.Console;
 
-namespace CardEngine
+namespace ConsolePokerClient
 {
     public static class CardPrinter
     {
