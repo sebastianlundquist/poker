@@ -1,0 +1,21 @@
+name: Trigger Documentation Build
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Trigger documentation build
+      run: |
+        curl -X POST \
+             -H "Authorization: token ${{ secrets.DOC_MGMT_TOKEN }}" \
+             -H "Accept: application/vnd.github.everest-preview+json" \
+             -H "Content-Type: application/json" \
+             --data '{ "event_type": "Poker push to master" }' \
+             https://api.github.com/repos/sebastianlundquist/poker-docfx/dispatches
