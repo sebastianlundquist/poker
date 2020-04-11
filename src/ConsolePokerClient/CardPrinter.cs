@@ -5,8 +5,16 @@ using static System.Console;
 
 namespace ConsolePokerClient
 {
+    /// <summary>
+    /// Class containing methods for printing Cards to the console.
+    /// </summary>
+    /// <see cref="Card"/>
     public static class CardPrinter
     {
+        /// <summary>
+        /// Prints a Card to the console.
+        /// </summary>
+        /// <param name="card">The Card to print to the console.</param>
         public static void Print(this Card card)
         {
             BackgroundColor = ConsoleColor.White;
@@ -24,6 +32,10 @@ namespace ConsolePokerClient
             }
         }
 
+        /// <summary>
+        /// Prints a List of Cards to the console.
+        /// </summary>
+        /// <param name="cards">The List of Cards to print to the console.</param>
         public static void Print(this List<Card> cards)
         {
             int numberOfCardsPerLine = WindowWidth / 6 - 1;
