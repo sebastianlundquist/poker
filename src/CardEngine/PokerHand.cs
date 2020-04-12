@@ -9,6 +9,15 @@ namespace CardEngine
     /// </summary>
     public class PokerHand : Stack<Card>
     {
+        public PokerHand() { }
+
+        public PokerHand(Stack<Card> cards)
+        {
+            var hand = new Stack<Card>(cards);
+            foreach (var card in hand)
+                Push(card);
+        }
+
         /// <summary>
         /// Inserts a Card at the top of the PokerHand.
         /// </summary>
