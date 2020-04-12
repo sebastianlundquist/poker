@@ -1,6 +1,8 @@
 ﻿using CardEngine;
-using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using static System.Console;
 
 namespace ConsolePokerClient
 {
@@ -8,12 +10,29 @@ namespace ConsolePokerClient
     {
         static void Main(string[] args)
         {
-            Console.OutputEncoding = Encoding.UTF8;
-            var deck = new Deck();
-            var cards = deck.Draw(5);
-            cards.Print();
+            OutputEncoding = Encoding.UTF8;
+            DrawNewHand();
+        }
 
-            Console.ReadKey();
+        private static void DrawNewHand()
+        {
+            Clear();
+            var deck = new Deck().Shuffle<Deck, Card>();
+            var communityCards = deck.Draw(5);
+            var yourCards = deck.Draw(2);
+            var hand = new PokerHand(new Stack<Card>(communityCards.Concat(yourCards)));
+            WriteLine();
+            WriteLine(" Community cards:");
+            communityCards.Print();
+            WriteLine();
+            WriteLine(" Your cards:");
+            yourCards.Print();
+            var ranking = hand.Evaluate();
+            WriteLine();
+            WriteLine($" You have {ranking.ToFriendlyString()}.");
+            ReadKey();
+
+            DrawNewHand();
         }
     }
 }
