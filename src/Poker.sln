@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30002.166
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardEngine", "CardEngine\CardEngine.csproj", "{372FD5E9-4708-4A87-BD2C-9F8EC7F8018D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CardEngine", "CardEngine\CardEngine.csproj", "{372FD5E9-4708-4A87-BD2C-9F8EC7F8018D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsolePokerClient", "ConsolePokerClient\ConsolePokerClient.csproj", "{D3881839-3539-4B69-B03B-3EB274EAC265}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsolePokerClient", "ConsolePokerClient\ConsolePokerClient.csproj", "{D3881839-3539-4B69-B03B-3EB274EAC265}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardEngineTests", "CardEngineTests\CardEngineTests.csproj", "{3D6D173E-8099-45E3-AAB2-DFB718B4F9DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CardEngineTests", "CardEngineTests\CardEngineTests.csproj", "{3D6D173E-8099-45E3-AAB2-DFB718B4F9DD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
