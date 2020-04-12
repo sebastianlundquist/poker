@@ -47,18 +47,33 @@ namespace CardEngine
         /// <param name="deck">The Deck.</param>
         /// <param name="count">The number of Cards to draw.</param>
         /// <returns>A List of the drawn Cards.</returns>
-        public static List<Card> Draw(this Deck deck, int count)
+        public static Stack<Card> Draw(this Deck deck, int count)
         {
             if (deck.Count >= count)
             {
-                var cards = new List<Card>();
+                var cards = new Stack<Card>();
                 for (int i = 0; i < count; i++)
-                    cards.Add(deck.Pop());
+                    cards.Push(deck.Pop());
 
                 return cards;
             }
 
             throw new InvalidOperationException($"Cannot draw {count} cards from a deck containing {deck.Count} cards.");
+        }
+
+        /// <summary>
+        /// Shuffles a Stack.
+        /// </summary>
+        /// <typeparam name="T">The type of the objects in the Stack.</typeparam>
+        /// <param name="stack">The Stack to shuffle.</param>
+        public static T Shuffle<T, U>(this T stack) where T : Stack<U>
+        {
+            var rnd = new Random();
+            var values = stack.ToArray();
+            stack.Clear();
+            foreach (var value in values.OrderBy(x => rnd.Next()))
+                stack.Push(value);
+            return stack;
         }
     }
 }

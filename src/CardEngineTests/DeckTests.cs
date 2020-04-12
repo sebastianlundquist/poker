@@ -62,8 +62,8 @@ namespace CardEngineTests
             var actualCards = deck.Draw(2);
 
             // Assert
-            Assert.AreEqual(expectedCards[0], actualCards[0]);
-            Assert.AreEqual(expectedCards[1], actualCards[1]);
+            Assert.AreEqual(expectedCards[1], actualCards.Pop());
+            Assert.AreEqual(expectedCards[0], actualCards.Pop());
         }
 
         [TestMethod()]
