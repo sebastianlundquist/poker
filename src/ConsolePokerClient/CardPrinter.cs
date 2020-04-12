@@ -35,6 +35,7 @@ namespace ConsolePokerClient
         /// <summary>
         /// Prints a List of Cards to the console.
         /// </summary>
+        /// <typeparam name="T">The type of what to print, where T inherits from Stack<Card>.</typeparam>
         /// <param name="cards">The List of Cards to print to the console.</param>
         public static void Print<T>(this T cards) where T : Stack<Card>
         {

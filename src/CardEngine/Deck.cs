@@ -64,7 +64,8 @@ namespace CardEngine
         /// <summary>
         /// Shuffles a Stack.
         /// </summary>
-        /// <typeparam name="T">The type of the objects in the Stack.</typeparam>
+        /// <typeparam name="T">The type of the Stack.</typeparam>
+        /// <typeparam name="U">The type of the items in the Stack.</typeparam>
         /// <param name="stack">The Stack to shuffle.</param>
         public static T Shuffle<T, U>(this T stack) where T : Stack<U>
         {
