@@ -36,7 +36,7 @@ namespace ConsolePokerClient
         /// Prints a List of Cards to the console.
         /// </summary>
         /// <param name="cards">The List of Cards to print to the console.</param>
-        public static void Print(this List<Card> cards)
+        public static void Print<T>(this T cards) where T : Stack<Card>
         {
             int numberOfCardsPerLine = WindowWidth / 6 - 1;
 
