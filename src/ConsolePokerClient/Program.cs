@@ -1,14 +1,21 @@
-﻿using CardEngine;
+﻿// <copyright file="Program.cs" company="Sebastian Lundquist">
+// Copyright (c) Sebastian Lundquist. All rights reserved.
+// </copyright>
+
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using CardEngine;
 using static System.Console;
 
 namespace ConsolePokerClient
 {
-    class Program
+    /// <summary>
+    /// Entry point for the console poker client.
+    /// </summary>
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             OutputEncoding = Encoding.UTF8;
             DrawNewHand();

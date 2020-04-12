@@ -1,6 +1,10 @@
-﻿using CardEngine;
+﻿// <copyright file="CardPrinter.cs" company="Sebastian Lundquist">
+// Copyright (c) Sebastian Lundquist. All rights reserved.
+// </copyright>
+
 using System;
 using System.Collections.Generic;
+using CardEngine;
 using static System.Console;
 
 namespace ConsolePokerClient
@@ -35,11 +39,12 @@ namespace ConsolePokerClient
         /// <summary>
         /// Prints a List of Cards to the console.
         /// </summary>
-        /// <typeparam name="T">The type of what to print, where T inherits from Stack<Card>.</typeparam>
+        /// <typeparam name="T">The type of what to print, where T inherits from Stack of Cards.</typeparam>
         /// <param name="cards">The List of Cards to print to the console.</param>
-        public static void Print<T>(this T cards) where T : Stack<Card>
+        public static void Print<T>(this T cards)
+            where T : Stack<Card>
         {
-            int numberOfCardsPerLine = WindowWidth / 6 - 1;
+            int numberOfCardsPerLine = (WindowWidth / 6) - 1;
 
             WriteLine();
             Write(" ");
@@ -47,18 +52,21 @@ namespace ConsolePokerClient
             {
                 PrintLine(card, card.Rank.ToShortString() + GetSpaces(card.Rank));
             }
+
             WriteLine();
             Write(" ");
             foreach (var card in cards)
             {
                 PrintLine(card, $"  {card.Suit.ToShortString()}  ");
             }
+
             WriteLine();
             Write(" ");
             foreach (var card in cards)
             {
                 PrintLine(card, GetSpaces(card.Rank) + card.Rank.ToShortString());
             }
+
             WriteLine();
 
             static void PrintLine(Card card, string line)

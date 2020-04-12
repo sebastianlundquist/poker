@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ConsolePokerClient</name>
+    </assembly>
+    <members>
+        <member name="T:ConsolePokerClient.CardPrinter">
+            <summary>
+            Class containing methods for printing Cards to the console.
+            </summary>
+            <see cref="T:CardEngine.Card"/>
+        </member>
+        <member name="M:ConsolePokerClient.CardPrinter.Print(CardEngine.Card)">
+            <summary>
+            Prints a Card to the console.
+            </summary>
+            <param name="card">The Card to print to the console.</param>
+        </member>
+        <member name="M:ConsolePokerClient.CardPrinter.Print``1(``0)">
+            <summary>
+            Prints a List of Cards to the console.
+            </summary>
+            <typeparam name="T">The type of what to print, where T inherits from Stack of Cards.</typeparam>
+            <param name="cards">The List of Cards to print to the console.</param>
+        </member>
+        <member name="T:ConsolePokerClient.Program">
+            <summary>
+            Entry point for the console poker client.
+            </summary>
+        </member>
+    </members>
+</doc>

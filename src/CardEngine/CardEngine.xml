@@ -1,0 +1,234 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CardEngine</name>
+    </assembly>
+    <members>
+        <member name="T:CardEngine.Card">
+            <summary>
+            Represents a card in a standard 52-card Deck.
+            </summary>
+            <see cref="T:CardEngine.Deck"/>
+        </member>
+        <member name="M:CardEngine.Card.#ctor(CardEngine.Rank,CardEngine.Suit)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CardEngine.Card"/> class.
+            </summary>
+            <param name="rank">The given Rank.</param>
+            <param name="suit">The given Suit.</param>
+        </member>
+        <member name="P:CardEngine.Card.Rank">
+            <summary>
+            Gets or sets the Rank of the Card.
+            </summary>
+            <see cref="P:CardEngine.Card.Rank"/>
+        </member>
+        <member name="P:CardEngine.Card.Suit">
+            <summary>
+            Gets or sets the Suit of the Card.
+            </summary>
+            <see cref="P:CardEngine.Card.Suit"/>
+        </member>
+        <member name="M:CardEngine.Card.op_Equality(CardEngine.Card,CardEngine.Card)">
+            <summary>
+            Override of operator==.
+            </summary>
+            <param name="left">Left Card.</param>
+            <param name="right">Right Card.</param>
+            <returns>True if left and right Cards are equal. False if left and right Cards are not equal.</returns>
+        </member>
+        <member name="M:CardEngine.Card.op_Inequality(CardEngine.Card,CardEngine.Card)">
+            <summary>
+            Override of operator!=.
+            </summary>
+            <param name="left">Left Card.</param>
+            <param name="right">Right Card.</param>
+            <returns>True if left and right Cards are not equal. False if left and right Cards are equal.</returns>
+        </member>
+        <member name="M:CardEngine.Card.ToString">
+            <summary>
+            Converts the Card to its equivalent string representation.
+            </summary>
+            <returns>The string representation.</returns>
+        </member>
+        <member name="M:CardEngine.Card.Equals(System.Object)">
+            <summary>
+            Determines whether the specified object is equal to the actual object.
+            </summary>
+            <param name="obj">The specified object.</param>
+            <returns>True if the objects are equal. False if the objects are not equal.</returns>
+        </member>
+        <member name="M:CardEngine.Card.GetHashCode">
+            <summary>
+            Override of GetHashCode.
+            </summary>
+            <returns>The hash code.</returns>
+        </member>
+        <member name="T:CardEngine.CardExtensions">
+            <summary>
+            Extension methods for the Card class.
+            </summary>
+            <see cref="T:CardEngine.Card"/>
+        </member>
+        <member name="M:CardEngine.CardExtensions.ToShortString(CardEngine.Card)">
+            <summary>
+            Converts the Card to its equivalent shortened string representation.
+            </summary>
+            <param name="card">The Card.</param>
+            <returns>The shortened string representation.</returns>
+        </member>
+        <member name="T:CardEngine.Deck">
+            <summary>
+            Represents a standard 52-card deck.
+            </summary>
+        </member>
+        <member name="M:CardEngine.Deck.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:CardEngine.Deck"/> class.
+            </summary>
+        </member>
+        <member name="T:CardEngine.DeckExtensions">
+            <summary>
+            Extension methods for the Deck class.
+            </summary>
+            <see cref="T:CardEngine.Deck"/>
+        </member>
+        <member name="M:CardEngine.DeckExtensions.Draw(CardEngine.Deck)">
+            <summary>
+            Draws a Card from the top of the Deck.
+            </summary>
+            <param name="deck">The Deck.</param>
+            <returns>The Card.</returns>
+        </member>
+        <member name="M:CardEngine.DeckExtensions.Draw(CardEngine.Deck,System.Int32)">
+            <summary>
+            Draws a given number of Cards from the top of the Deck.
+            </summary>
+            <param name="deck">The Deck.</param>
+            <param name="count">The number of Cards to draw.</param>
+            <returns>A List of the drawn Cards.</returns>
+        </member>
+        <member name="M:CardEngine.DeckExtensions.Shuffle``2(``0)">
+            <summary>
+            Shuffles a Stack.
+            </summary>
+            <typeparam name="T">The type of the Stack.</typeparam>
+            <typeparam name="U">The type of the items in the Stack.</typeparam>
+            <param name="stack">The Stack to shuffle.</param>
+        </member>
+        <member name="T:CardEngine.PokerHand">
+            <summary>
+            Represents a poker hand.
+            </summary>
+        </member>
+        <member name="M:CardEngine.PokerHand.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:CardEngine.PokerHand"/> class.
+            </summary>
+        </member>
+        <member name="M:CardEngine.PokerHand.#ctor(System.Collections.Generic.Stack{CardEngine.Card})">
+            <summary>
+            Initializes a new instance of the <see cref="T:CardEngine.PokerHand"/> class.
+            </summary>
+            <param name="cards">Stack of Cards to initialize the PokerHand with.</param>
+        </member>
+        <member name="M:CardEngine.PokerHand.Push(CardEngine.Card)">
+            <summary>
+            Inserts a Card at the top of the PokerHand.
+            </summary>
+            <param name="card">The Card to insert at the top of the PokerHand.</param>
+        </member>
+        <member name="M:CardEngine.PokerHand.Add(CardEngine.Card)">
+            <summary>
+            Calls Push to insert a Card at the top of the PokerHand to enable simplified collection initialization.
+            </summary>
+            <param name="card">The Card to insert at the top of the PokerHand.</param>
+            <see cref="M:CardEngine.PokerHand.Push(CardEngine.Card)"/>
+        </member>
+        <member name="T:CardEngine.PokerHandExtensions">
+            <summary>
+            Extension methods for the PokerHand class.
+            </summary>
+            <see cref="T:CardEngine.PokerHand"/>
+        </member>
+        <member name="M:CardEngine.PokerHandExtensions.IsFull(CardEngine.PokerHand)">
+            <summary>
+            Determines whether the PokerHand contains its maximum number of 7 cards.
+            </summary>
+            <param name="hand">The PokerHand to evaluate.</param>
+            <returns>True if the PokerHand is full. False if the PokerHand is not full.</returns>
+        </member>
+        <member name="M:CardEngine.PokerHandExtensions.Evaluate(CardEngine.PokerHand)">
+            <summary>
+            Evaluates the PokerHandRanking of the given PokerHand.
+            </summary>
+            <param name="hand">The PokerHand to evaluate.</param>
+            <returns>The PokerHandRanking of the PokerHand.</returns>
+            <see cref="T:CardEngine.PokerHandRanking"/>
+        </member>
+        <member name="T:CardEngine.PokerHandRanking">
+            <summary>
+            Represents the ranking of a PokerHand.
+            </summary>
+            <see cref="T:CardEngine.PokerHand"/>
+        </member>
+        <member name="T:CardEngine.PokerHandRankingExtensions">
+            <summary>
+            Extension methods for the PokerHandRanking enum.
+            </summary>
+            <see cref="T:CardEngine.PokerHandRanking"/>
+        </member>
+        <member name="M:CardEngine.PokerHandRankingExtensions.ToFriendlyString(CardEngine.PokerHandRanking)">
+            <summary>
+            Converts the PokerHandRanking to its equivalent friendly string representation.
+            </summary>
+            <param name="ranking">The PokerHandRanking.</param>
+            <returns>The friendly string representation.</returns>
+        </member>
+        <member name="T:CardEngine.Rank">
+            <summary>
+            Represents the rank of a Card.
+            </summary>
+            <see cref="T:CardEngine.Card"/>
+        </member>
+        <member name="T:CardEngine.RankExtensions">
+            <summary>
+            Extension methods for the Rank enum.
+            </summary>
+            <see cref="T:CardEngine.Rank"/>
+        </member>
+        <member name="M:CardEngine.RankExtensions.ToShortString(CardEngine.Rank)">
+            <summary>
+            Converts the Rank to its equivalent shortened string representation.
+            </summary>
+            <param name="rank">The Rank.</param>
+            <returns>The shortened string representation.</returns>
+        </member>
+        <member name="T:CardEngine.Suit">
+            <summary>
+            Represents the suit of a Card.
+            </summary>
+            <see cref="T:CardEngine.Card"/>
+        </member>
+        <member name="T:CardEngine.SuitExtensions">
+            <summary>
+            Extension methods for the Suit enum.
+            </summary>
+            <see cref="T:CardEngine.Suit"/>
+        </member>
+        <member name="M:CardEngine.SuitExtensions.ToShortString(CardEngine.Suit)">
+            <summary>
+            Converts the Suit to its equivalent shortened string representation.
+            </summary>
+            <param name="suit">The Suit.</param>
+            <returns>The shortened string representation.</returns>
+        </member>
+        <member name="M:CardEngine.SuitExtensions.Color(CardEngine.Suit)">
+            <summary>
+            Gets the color of the Suit as a ConsoleColor.
+            </summary>
+            <param name="suit">The Suit.</param>
+            <returns>The ConsoleColor.</returns>
+        </member>
+    </members>
+</doc>

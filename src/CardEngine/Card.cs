@@ -1,4 +1,8 @@
-﻿using System.Collections.Generic;
+﻿// <copyright file="Card.cs" company="Sebastian Lundquist">
+// Copyright (c) Sebastian Lundquist. All rights reserved.
+// </copyright>
+
+using System.Collections.Generic;
 
 namespace CardEngine
 {
@@ -9,19 +13,7 @@ namespace CardEngine
     public class Card
     {
         /// <summary>
-        /// The Rank of the Card.
-        /// </summary>
-        /// <see cref="Rank"/>
-        public Rank Rank { get; set; }
-
-        /// <summary>
-        /// The Suit of the Card.
-        /// </summary>
-        /// <see cref="Suit"/>
-        public Suit Suit { get; set; }
-
-        /// <summary>
-        /// Constructs a Card with a given Rank and Suit.
+        /// Initializes a new instance of the <see cref="Card"/> class.
         /// </summary>
         /// <param name="rank">The given Rank.</param>
         /// <param name="suit">The given Suit.</param>
@@ -29,6 +21,37 @@ namespace CardEngine
         {
             Rank = rank;
             Suit = suit;
+        }
+
+        /// <summary>
+        /// Gets or sets the Rank of the Card.
+        /// </summary>
+        /// <see cref="Rank"/>
+        public Rank Rank { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Suit of the Card.
+        /// </summary>
+        /// <see cref="Suit"/>
+        public Suit Suit { get; set; }
+
+        /// <summary>
+        /// Override of operator==.
+        /// </summary>
+        /// <param name="left">Left Card.</param>
+        /// <param name="right">Right Card.</param>
+        /// <returns>True if left and right Cards are equal. False if left and right Cards are not equal.</returns>
+        public static bool operator ==(Card left, Card right) => EqualityComparer<Card>.Default.Equals(left, right);
+
+        /// <summary>
+        /// Override of operator!=.
+        /// </summary>
+        /// <param name="left">Left Card.</param>
+        /// <param name="right">Right Card.</param>
+        /// <returns>True if left and right Cards are not equal. False if left and right Cards are equal.</returns>
+        public static bool operator !=(Card left, Card right)
+        {
+            return !(left == right);
         }
 
         /// <summary>
@@ -61,48 +84,9 @@ namespace CardEngine
         public override int GetHashCode()
         {
             int hashCode = 483265535;
-            hashCode = hashCode * -1521134295 + Rank.GetHashCode();
-            hashCode = hashCode * -1521134295 + Suit.GetHashCode();
+            hashCode = (hashCode * -1521134295) + Rank.GetHashCode();
+            hashCode = (hashCode * -1521134295) + Suit.GetHashCode();
             return hashCode;
-        }
-
-        /// <summary>
-        /// Override of operator==.
-        /// </summary>
-        /// <param name="left">Left Card.</param>
-        /// <param name="right">Right Card.</param>
-        /// <returns>True if left and right Cards are equal. False if left and right Cards are not equal.</returns>
-        public static bool operator ==(Card left, Card right)
-        {
-            return EqualityComparer<Card>.Default.Equals(left, right);
-        }
-
-        /// <summary>
-        /// Override of operator!=.
-        /// </summary>
-        /// <param name="left">Left Card.</param>
-        /// <param name="right">Right Card.</param>
-        /// <returns>True if left and right Cards are not equal. False if left and right Cards are equal.</returns>
-        public static bool operator !=(Card left, Card right)
-        {
-            return !(left == right);
-        }
-    }
-
-    /// <summary>
-    /// Extension methods for the Card class.
-    /// </summary>
-    /// <see cref="Card"/>
-    public static class CardExtension
-    {
-        /// <summary>
-        /// Converts the Card to its equivalent shortened string representation.
-        /// </summary>
-        /// <param name="card">The Card.</param>
-        /// <returns>The shortened string representation.</returns>
-        public static string ToShortString(this Card card)
-        {
-            return card.Rank.ToShortString() + card.Suit.ToShortString();
         }
     }
 }
