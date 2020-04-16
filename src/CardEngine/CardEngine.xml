@@ -113,8 +113,9 @@
             Shuffles a Stack.
             </summary>
             <typeparam name="T">The type of the Stack.</typeparam>
-            <typeparam name="U">The type of the items in the Stack.</typeparam>
+            <typeparam name="T1">The type of the items in the Stack.</typeparam>
             <param name="stack">The Stack to shuffle.</param>
+            <returns>The shuffled Stack.</returns>
         </member>
         <member name="T:CardEngine.PokerHand">
             <summary>
@@ -172,18 +173,50 @@
             </summary>
             <see cref="T:CardEngine.PokerHand"/>
         </member>
-        <member name="T:CardEngine.PokerHandRankingExtensions">
+        <member name="F:CardEngine.PokerHandRanking.HighCard">
             <summary>
-            Extension methods for the PokerHandRanking enum.
+            High Card
             </summary>
-            <see cref="T:CardEngine.PokerHandRanking"/>
         </member>
-        <member name="M:CardEngine.PokerHandRankingExtensions.ToFriendlyString(CardEngine.PokerHandRanking)">
+        <member name="F:CardEngine.PokerHandRanking.Pair">
             <summary>
-            Converts the PokerHandRanking to its equivalent friendly string representation.
+            Pair
             </summary>
-            <param name="ranking">The PokerHandRanking.</param>
-            <returns>The friendly string representation.</returns>
+        </member>
+        <member name="F:CardEngine.PokerHandRanking.TwoPairs">
+            <summary>
+            Two Pairs
+            </summary>
+        </member>
+        <member name="F:CardEngine.PokerHandRanking.ThreeOfAKind">
+            <summary>
+            Three of a Kind
+            </summary>
+        </member>
+        <member name="F:CardEngine.PokerHandRanking.Straight">
+            <summary>
+            Straight
+            </summary>
+        </member>
+        <member name="F:CardEngine.PokerHandRanking.Flush">
+            <summary>
+            Flush
+            </summary>
+        </member>
+        <member name="F:CardEngine.PokerHandRanking.FullHouse">
+            <summary>
+            Full House
+            </summary>
+        </member>
+        <member name="F:CardEngine.PokerHandRanking.FourOfAKind">
+            <summary>
+            Four of a Kind
+            </summary>
+        </member>
+        <member name="F:CardEngine.PokerHandRanking.StraightFlush">
+            <summary>
+            Straight Flush
+            </summary>
         </member>
         <member name="T:CardEngine.Rank">
             <summary>
@@ -191,18 +224,70 @@
             </summary>
             <see cref="T:CardEngine.Card"/>
         </member>
-        <member name="T:CardEngine.RankExtensions">
+        <member name="F:CardEngine.Rank.Two">
             <summary>
-            Extension methods for the Rank enum.
+            2
             </summary>
-            <see cref="T:CardEngine.Rank"/>
         </member>
-        <member name="M:CardEngine.RankExtensions.ToShortString(CardEngine.Rank)">
+        <member name="F:CardEngine.Rank.Three">
             <summary>
-            Converts the Rank to its equivalent shortened string representation.
+            3
             </summary>
-            <param name="rank">The Rank.</param>
-            <returns>The shortened string representation.</returns>
+        </member>
+        <member name="F:CardEngine.Rank.Four">
+            <summary>
+            4
+            </summary>
+        </member>
+        <member name="F:CardEngine.Rank.Five">
+            <summary>
+            5
+            </summary>
+        </member>
+        <member name="F:CardEngine.Rank.Six">
+            <summary>
+            6
+            </summary>
+        </member>
+        <member name="F:CardEngine.Rank.Seven">
+            <summary>
+            7
+            </summary>
+        </member>
+        <member name="F:CardEngine.Rank.Eight">
+            <summary>
+            8
+            </summary>
+        </member>
+        <member name="F:CardEngine.Rank.Nine">
+            <summary>
+            9
+            </summary>
+        </member>
+        <member name="F:CardEngine.Rank.Ten">
+            <summary>
+            10
+            </summary>
+        </member>
+        <member name="F:CardEngine.Rank.Jack">
+            <summary>
+            Jack
+            </summary>
+        </member>
+        <member name="F:CardEngine.Rank.Queen">
+            <summary>
+            Queen
+            </summary>
+        </member>
+        <member name="F:CardEngine.Rank.King">
+            <summary>
+            King
+            </summary>
+        </member>
+        <member name="F:CardEngine.Rank.Ace">
+            <summary>
+            Ace
+            </summary>
         </member>
         <member name="T:CardEngine.Suit">
             <summary>
@@ -210,20 +295,66 @@
             </summary>
             <see cref="T:CardEngine.Card"/>
         </member>
-        <member name="T:CardEngine.SuitExtensions">
+        <member name="F:CardEngine.Suit.Clubs">
+            <summary>
+            Clubs
+            </summary>
+        </member>
+        <member name="F:CardEngine.Suit.Diamonds">
+            <summary>
+            Diamonds
+            </summary>
+        </member>
+        <member name="F:CardEngine.Suit.Spades">
+            <summary>
+            Spades
+            </summary>
+        </member>
+        <member name="F:CardEngine.Suit.Hearts">
+            <summary>
+            Hearts
+            </summary>
+        </member>
+        <member name="T:PokerHandRankingExtensions">
+            <summary>
+            Extension methods for the PokerHandRanking enum.
+            </summary>
+            <see cref="T:CardEngine.PokerHandRanking"/>
+        </member>
+        <member name="M:PokerHandRankingExtensions.ToFriendlyString(CardEngine.PokerHandRanking)">
+            <summary>
+            Converts the PokerHandRanking to its equivalent friendly string representation.
+            </summary>
+            <param name="ranking">The PokerHandRanking.</param>
+            <returns>The friendly string representation.</returns>
+        </member>
+        <member name="T:RankExtensions">
+            <summary>
+            Extension methods for the Rank enum.
+            </summary>
+            <see cref="T:CardEngine.Rank"/>
+        </member>
+        <member name="M:RankExtensions.ToShortString(CardEngine.Rank)">
+            <summary>
+            Converts the Rank to its equivalent shortened string representation.
+            </summary>
+            <param name="rank">The Rank.</param>
+            <returns>The shortened string representation.</returns>
+        </member>
+        <member name="T:SuitExtensions">
             <summary>
             Extension methods for the Suit enum.
             </summary>
             <see cref="T:CardEngine.Suit"/>
         </member>
-        <member name="M:CardEngine.SuitExtensions.ToShortString(CardEngine.Suit)">
+        <member name="M:SuitExtensions.ToShortString(CardEngine.Suit)">
             <summary>
             Converts the Suit to its equivalent shortened string representation.
             </summary>
             <param name="suit">The Suit.</param>
             <returns>The shortened string representation.</returns>
         </member>
-        <member name="M:CardEngine.SuitExtensions.Color(CardEngine.Suit)">
+        <member name="M:SuitExtensions.Color(CardEngine.Suit)">
             <summary>
             Gets the color of the Suit as a ConsoleColor.
             </summary>
