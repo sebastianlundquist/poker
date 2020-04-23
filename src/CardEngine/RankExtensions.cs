@@ -18,36 +18,22 @@ public static class RankExtensions
     /// <returns>The shortened string representation.</returns>
     public static string ToShortString(this Rank rank)
     {
-        switch (rank)
+        return rank switch
         {
-            case Rank.Ace:
-                return "A";
-            case Rank.King:
-                return "K";
-            case Rank.Queen:
-                return "Q";
-            case Rank.Jack:
-                return "J";
-            case Rank.Ten:
-                return "10";
-            case Rank.Nine:
-                return "9";
-            case Rank.Eight:
-                return "8";
-            case Rank.Seven:
-                return "7";
-            case Rank.Six:
-                return "6";
-            case Rank.Five:
-                return "5";
-            case Rank.Four:
-                return "4";
-            case Rank.Three:
-                return "3";
-            case Rank.Two:
-                return "2";
-            default:
-                throw new InvalidOperationException("Invalid rank.");
-        }
+            Rank.Ace => "A",
+            Rank.King => "K",
+            Rank.Queen => "Q",
+            Rank.Jack => "J",
+            Rank.Ten => "10",
+            Rank.Nine => "9",
+            Rank.Eight => "8",
+            Rank.Seven => "7",
+            Rank.Six => "6",
+            Rank.Five => "5",
+            Rank.Four => "4",
+            Rank.Three => "3",
+            Rank.Two => "2",
+            _ => throw new InvalidOperationException()
+        };
     }
 }
