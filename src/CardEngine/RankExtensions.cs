@@ -33,7 +33,7 @@ public static class RankExtensions
             Rank.Four => "4",
             Rank.Three => "3",
             Rank.Two => "2",
-            _ => throw new InvalidOperationException()
+            _ => throw new InvalidOperationException("Invalid rank.")
         };
     }
 }

@@ -18,19 +18,14 @@ public static class SuitExtensions
     /// <returns>The shortened string representation.</returns>
     public static char ToShortString(this Suit suit)
     {
-        switch (suit)
+        return suit switch
         {
-            case Suit.Hearts:
-                return '♥';
-            case Suit.Spades:
-                return '♠';
-            case Suit.Diamonds:
-                return '♦';
-            case Suit.Clubs:
-                return '♣';
-            default:
-                throw new InvalidOperationException("Invalid suit.");
-        }
+            Suit.Hearts => '♥',
+            Suit.Spades => '♠',
+            Suit.Diamonds => '♦',
+            Suit.Clubs => '♣',
+            _ => throw new InvalidOperationException("Invalid suit."),
+        };
     }
 
     /// <summary>
