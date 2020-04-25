@@ -139,6 +139,12 @@
             </summary>
             <param name="card">The Card to insert at the top of the PokerHand.</param>
         </member>
+        <member name="M:CardEngine.PokerHand.PushMany(System.Collections.Generic.IEnumerable{CardEngine.Card})">
+            <summary>
+            Inserts an IEnumerable of Cards at the top of the PokerHand.
+            </summary>
+            <param name="cards">The Cards to insert at the top of the PokerHand.</param>
+        </member>
         <member name="M:CardEngine.PokerHand.Add(CardEngine.Card)">
             <summary>
             Calls Push to insert a Card at the top of the PokerHand to enable simplified collection initialization.

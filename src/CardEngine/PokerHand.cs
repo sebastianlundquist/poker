@@ -43,6 +43,18 @@ namespace CardEngine
         }
 
         /// <summary>
+        /// Inserts an IEnumerable of Cards at the top of the PokerHand.
+        /// </summary>
+        /// <param name="cards">The Cards to insert at the top of the PokerHand.</param>
+        public void PushMany(IEnumerable<Card> cards)
+        {
+            if (Count + cards.Count() > 7)
+                throw new InvalidOperationException("Cannot have more than 7 cards in a hand.");
+            foreach (var card in cards)
+                base.Push(card);
+        }
+
+        /// <summary>
         /// Calls Push to insert a Card at the top of the PokerHand to enable simplified collection initialization.
         /// </summary>
         /// <param name="card">The Card to insert at the top of the PokerHand.</param>
