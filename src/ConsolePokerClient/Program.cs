@@ -34,7 +34,7 @@ namespace ConsolePokerClient
             WriteLine();
             WriteLine(" Your cards:");
             yourCards.Print();
-            var ranking = hand.Evaluate();
+            var ranking = hand.GetCurrentHand().Ranking;
             WriteLine();
             WriteLine($" You have {ranking.ToFriendlyString()}.");
             ReadKey();

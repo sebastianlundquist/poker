@@ -159,13 +159,12 @@
             <param name="hand">The PokerHand to evaluate.</param>
             <returns>True if the PokerHand is full. False if the PokerHand is not full.</returns>
         </member>
-        <member name="M:CardEngine.PokerHandExtensions.Evaluate(CardEngine.PokerHand)">
+        <member name="M:CardEngine.PokerHandExtensions.GetCurrentHand(System.Collections.Generic.IEnumerable{CardEngine.Card})">
             <summary>
-            Evaluates the PokerHandRanking of the given PokerHand.
+            Gets the five Cards in play and the hand's PokerHandRanking out of an IEnumerable of Cards.
             </summary>
-            <param name="hand">The PokerHand to evaluate.</param>
-            <returns>The PokerHandRanking of the PokerHand.</returns>
-            <see cref="T:CardEngine.PokerHandRanking"/>
+            <param name="cards">The Cards to evaluate.</param>
+            <returns>The Cards in play and the hand's PokerHandRanking.</returns>
         </member>
         <member name="T:CardEngine.PokerHandRanking">
             <summary>
