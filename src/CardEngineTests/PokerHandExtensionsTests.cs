@@ -6,18 +6,22 @@ namespace CardEngineTests
     [TestClass]
     public class PokerHandExtensionsTests
     {
+        Deck shuffledDeck;
         PokerHand highCardHand;
         PokerHand pairHand;
         PokerHand twoPairHand;
         PokerHand threeOfAKindHand;
         PokerHand straightHand;
         PokerHand flushHand;
+        PokerHand fullHouseHand;
         PokerHand fourOfAKindHand;
         PokerHand straightFlushHand;
 
         [TestInitialize]
         public void Initialize()
         {
+            shuffledDeck = new Deck().Shuffle<Deck, Card>();
+
             highCardHand = new PokerHand
             {
                 new Card(Rank.Two, Suit.Hearts),
@@ -72,6 +76,15 @@ namespace CardEngineTests
                 new Card(Rank.Seven, Suit.Hearts),
             };
 
+            fullHouseHand = new PokerHand
+            {
+                new Card(Rank.Three, Suit.Hearts),
+                new Card(Rank.Three, Suit.Spades),
+                new Card(Rank.Two, Suit.Hearts),
+                new Card(Rank.Two, Suit.Spades),
+                new Card(Rank.Two, Suit.Diamonds),
+            };
+
             fourOfAKindHand = new PokerHand
             {
                 new Card(Rank.Two, Suit.Hearts),
@@ -89,6 +102,28 @@ namespace CardEngineTests
                 new Card(Rank.Five, Suit.Hearts),
                 new Card(Rank.Six, Suit.Hearts),
             };
+        }
+
+        [TestMethod()]
+        public void IsFull_FullHand_ReturnsTrue()
+        {
+            // Arrange
+            var hand = new PokerHand();
+            hand.PushMany(shuffledDeck.Draw(7));
+
+            // Assert
+            Assert.IsTrue(hand.IsFull());
+        }
+
+        [TestMethod()]
+        public void IsFull_NonFullHand_ReturnsFalse()
+        {
+            // Arrange
+            var hand = new PokerHand();
+            hand.PushMany(shuffledDeck.Draw(6));
+
+            // Assert
+            Assert.IsFalse(hand.IsFull());
         }
 
         [TestMethod()]
@@ -131,6 +166,13 @@ namespace CardEngineTests
         {
             // Assert
             Assert.AreEqual(PokerHandRanking.Flush, flushHand.GetCurrentHand().Ranking);
+        }
+
+        [TestMethod()]
+        public void Evaluate_FullHouse_ReturnsFullHouse()
+        {
+            // Assert
+            Assert.AreEqual(PokerHandRanking.FullHouse, fullHouseHand.GetCurrentHand().Ranking);
         }
 
         [TestMethod()]

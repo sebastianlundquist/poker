@@ -87,6 +87,13 @@ namespace CardEngine
             return (cards.HighCard(), PokerHandRanking.HighCard);
         }
 
+        private static IEnumerable<Card> GetWinningHands(IEnumerable<(IEnumerable<Card> Cards, PokerHandRanking Ranking)> hands)
+        {
+            var highestRankingHands = hands.ToList().OrderByDescending(c => c.Ranking).GroupBy(c => c.Ranking).First().ToList();
+
+            throw new NotImplementedException();
+        }
+
         private static Card HighestValueCard(this IEnumerable<Card> cards)
         {
             return cards.OrderByDescending(c => c.Rank).ThenByDescending(c => c.Suit).ToList().First();
@@ -187,7 +194,7 @@ namespace CardEngine
 
         private static IEnumerable<Card> FlushCards(this IEnumerable<Card> cards)
         {
-            return cards.GroupBy(c => c.Suit).First();
+            return cards.GroupBy(c => c.Suit).OrderByDescending(c => c.Count()).First();
         }
 
         private static IOrderedEnumerable<Card> Flush(this IEnumerable<Card> cards)
